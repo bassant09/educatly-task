@@ -1,0 +1,30 @@
+
+@import '../../../../../style/variables.scss';
+
+.blog-card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 16px -4px;
+padding: 24px 24px 32px 24px;
+}
+img{
+    object-fit: cover;
+}
+.blog-type{
+    font-size: 14px;
+    font-weight: 600;
+    color: $secondary-color;
+}
+.blog-title{
+    font-weight: 600;
+    font-size: 22px;
+}
+.blog-description{
+    font-size: 14px;
+    line-height: 24px;
+    color:$dark-gray-color ;
+}
+@media only screen and (max-width: 767px){
+    .blog-title{
+        font-size: 18px;
+    }
+}
+

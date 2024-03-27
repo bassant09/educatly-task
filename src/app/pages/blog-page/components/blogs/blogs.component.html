@@ -1,0 +1,43 @@
+<div class="mt-5">
+  <div class="row m-0 p-0 mb-4 mb-md-5">
+  
+    @if (isError) {
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <ng-lottie [options]="errorOptions" [width]="'400px'" />
+      <p class="error-message mt-2">Oops! An error occurred.</p>
+    </div>
+    <div class="mb-5 d-flex justify-content-center align-items-center">
+      <button class="btn" (click)="getAllArticles(this.pageIndex)">
+        <i class="bi bi-hand-index-thumb icon"></i> &nbsp; Try again
+      </button>
+    </div>
+    } @else if(!isLoading) { @for( blog of blogs; track blog.id){
+    <div class="col-sm-6 col-md-4 mb-4 mb-md-5 card-cointaner">
+      <app-blog-card [blog]="blog" class="h-100"></app-blog-card>
+    </div>
+    } @empty { 
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <ng-lottie [options]="emptyOptions" [width]="'400px'" [height]="'250px'" />
+        <p class="error-message ">Oops! No Blogs Found.</p>
+        <button class="btn" (click)="getAllArticles(this.pageIndex)">
+          <i class="bi bi-hand-index-thumb icon"></i> &nbsp; Try again
+        </button>
+      </div>
+    }
+
+    <div
+      class="mb-5 d-flex justify-content-center align-items-center"
+      *ngIf="!isError&&blogs.length>0"
+    >
+      <button class="btn" (click)="increasePageIndex()">
+        <i class="bi bi-arrow-down icon"></i> &nbsp; Load more
+      </button>
+    </div>
+    }
+    <div class="d-flex justify-content-center align-items-center" *ngIf="isLoading">
+      <div class="spinner-grow custom-spinner " role="status" >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>

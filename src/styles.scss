@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../src/style/variables.scss';
+
+body{
+    background-color: #fff;
+}
+*{
+    font-family: 'Inter', sans-serif;
+}
