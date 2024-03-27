@@ -27,9 +27,10 @@ export class BlogsComponent implements OnInit{
   };
   constructor(private _articles:BlogsService){}
   ngOnInit(): void {
-   this.getAllArticles(this.pageIndex)
+   this.getAllArticles()
   }
-  getAllArticles(pageIndex:number){
+  getAllArticles(){
+  if(this.isLoading) return;
     this.isError=false
     this.isLoading=true 
     this._articles.getArticales(this.pageIndex).subscribe(
@@ -47,7 +48,8 @@ export class BlogsComponent implements OnInit{
     )
   }
    increasePageIndex(){
+    if(this.isLoading) return
     this.pageIndex++;
-    this.getAllArticles(this.pageIndex)
+    this.getAllArticles()
    }
 }
