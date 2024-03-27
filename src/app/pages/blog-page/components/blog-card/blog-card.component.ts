@@ -11,4 +11,12 @@ import { UserBlogComponent } from '../user-blog/user-blog.component';
 })
 export class BlogCardComponent {
 @Input() blog!:IBlog
+placeholderImage = 'assets/images/placeHolder.png'; 
+mainImageLoaded = false;
+
+onImageLoad(event: Event) {
+  this.mainImageLoaded = true;
+  const imgElement = event.target as HTMLImageElement;
+  imgElement.src = this.blog.social_image;
+}
 }
