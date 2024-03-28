@@ -1,7 +1,7 @@
 <div class="blog-card bg-white h-100 d-flex flex-column" (click)="navigateToLink() "  >
     <div class="flex-grow-1">
         <img  class="img-fluid" [src]="blog.social_image" alt="" />
-        <div class="mt-3 mt-md-4">
+        <div class="mt-3 mt-lg-4">
           <p class="blog-type p-0 mb-3">{{ blog.type_of }}</p>
           <div class="d-flex align-items-center justify-content-between w-100">
             <p class="blog-title m-0 p-0">{{ blog.title }}</p>
@@ -28,7 +28,7 @@
         </div>
     </div>
   
-  <div class="mt-4 mt-md-5">
+  <div class="mt-4 mt-lg-5">
     <app-user-blog [blogUser]="blog"></app-user-blog>
   </div>
 </div>
