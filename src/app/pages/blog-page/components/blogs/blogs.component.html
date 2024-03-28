@@ -1,34 +1,34 @@
 <div class="mt-5">
   <div class="row m-0 p-0 mb-4 mb-md-5">
-  
-      @for( blog of blogs; track blog.id){
+    @for( blog of blogs; track blog.id){
     <div class="col-sm-6 col-md-4 mb-4 mb-md-5 card-cointaner">
       <app-blog-card [blog]="blog" class="h-100"></app-blog-card>
     </div>
-    } @empty { 
-      @if (!isLoading&& !isError) { <app-empty-blog (tryAgain)="getAllArticles()"></app-empty-blog>}
-     
+    } @empty { @if (!isLoading&& !isError) {
+    <app-empty-blog (tryAgain)="getAllArticles()"></app-empty-blog>} } @if
+    (isError) {
+    <app-error-blog></app-error-blog>
+    <div class="mb-5 d-flex justify-content-center align-items-center">
+      <button class="btn" (click)="getAllArticles()">
+        <i class="bi bi-hand-index-thumb icon"></i> &nbsp; Try again
+      </button>
+    </div>
     }
-    @if (isError) {
-      <app-error-blog></app-error-blog>
-      <div class="mb-5 d-flex justify-content-center align-items-center">
-        <button class="btn" (click)="getAllArticles()">
-          <i class="bi bi-hand-index-thumb icon"></i> &nbsp; Try again
-        </button>
-      </div>
-      } 
 
     <div
       class="mb-5 d-flex justify-content-center align-items-center"
-      *ngIf="!isError&&blogs.length>0 && !isLoading"
+      *ngIf="!isError && blogs.length > 0 && !isLoading"
     >
       <button class="btn" (click)="increasePageIndex()">
         <i class="bi bi-arrow-down icon"></i> &nbsp; Load more
       </button>
     </div>
-    
-    <div class="d-flex justify-content-center align-items-center" *ngIf="isLoading">
-      <div class="spinner-grow custom-spinner " role="status" >
+
+    <div
+      class="d-flex justify-content-center align-items-center"
+      *ngIf="isLoading"
+    >
+      <div class="spinner-grow custom-spinner" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>

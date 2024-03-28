@@ -5,10 +5,8 @@ import { SearchBoxComponent } from '../search-box/search-box.component';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [BadgeComponent,SearchBoxComponent],
+  imports: [BadgeComponent, SearchBoxComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
-
-}
+export class HeaderComponent {}

@@ -5,7 +5,7 @@ import { LottieComponent, AnimationOptions } from 'ngx-lottie';
   standalone: true,
   imports: [LottieComponent],
   templateUrl: './error-blog.component.html',
-  styleUrl: './error-blog.component.scss'
+  styleUrl: './error-blog.component.scss',
 })
 export class ErrorBlogComponent {
   errorOptions: AnimationOptions = {

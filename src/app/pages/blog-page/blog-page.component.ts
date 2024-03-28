@@ -5,10 +5,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 @Component({
   selector: 'app-blog-page',
   standalone: true,
-  imports: [HeaderComponent,BlogsComponent],
+  imports: [HeaderComponent, BlogsComponent],
   templateUrl: './blog-page.component.html',
-  styleUrl: './blog-page.component.scss'
+  styleUrl: './blog-page.component.scss',
 })
-export class BlogPageComponent {
-
-}
+export class BlogPageComponent {}

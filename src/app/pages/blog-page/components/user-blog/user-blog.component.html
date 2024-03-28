@@ -1,8 +1,7 @@
 <div class="d-flex gap-2">
-<img [src]="blogUser?.user?.profile_image" class="rounded-circle">
-<div>
-    <p class="user-name m-0 p-0">{{blogUser?.user?.name}}</p>
-    <p class="blog-date mb-0 pb-0">{{blogUser?.created_at | date}}</p>
-
-</div>
+  <img [src]="blogUser?.user?.profile_image" class="rounded-circle" />
+  <div>
+    <p class="user-name m-0 p-0">{{ blogUser?.user?.name }}</p>
+    <p class="blog-date mb-0 pb-0">{{ blogUser?.created_at | date }}</p>
+  </div>
 </div>

@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './user-blog.component.html',
-  styleUrl: './user-blog.component.scss'
+  styleUrl: './user-blog.component.scss',
 })
 export class UserBlogComponent {
-@Input() blogUser!:IBlog
+  @Input() blogUser!: IBlog;
 }

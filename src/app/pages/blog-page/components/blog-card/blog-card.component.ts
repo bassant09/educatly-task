@@ -6,21 +6,15 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-blog-card',
   standalone: true,
-  imports: [UserBlogComponent,RouterModule],
+  imports: [UserBlogComponent, RouterModule],
   templateUrl: './blog-card.component.html',
-  styleUrl: './blog-card.component.scss'
+  styleUrl: './blog-card.component.scss',
 })
 export class BlogCardComponent {
-
-@Input() blog!:IBlog
-placeholderImage = 'assets/images/placeHolder.png'; 
-mainImageLoaded = false;
-navigateToLink() {
-  window.open(this.blog.url, '_blank');
-}
-// onImageLoad(event: Event) {
-//   this.mainImageLoaded = true;
-//   const imgElement = event.target as HTMLImageElement;
-//   imgElement.src = this.blog.social_image;
-// }
+  @Input() blog!: IBlog;
+  placeholderImage = 'assets/images/placeHolder.png';
+  mainImageLoaded = false;
+  navigateToLink() {
+    window.open(this.blog.url, '_blank');
+  }
 }
