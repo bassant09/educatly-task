@@ -19,7 +19,7 @@
 
     <div
       class="mb-5 d-flex justify-content-center align-items-center"
-      *ngIf="!isError&&blogs.length>0"
+      *ngIf="!isError&&blogs.length>0 && !isLoading"
     >
       <button class="btn" (click)="increasePageIndex()">
         <i class="bi bi-arrow-down icon"></i> &nbsp; Load more
