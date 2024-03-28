@@ -2,10 +2,7 @@
   <div class="row m-0 p-0 mb-4 mb-md-5">
   
     @if (isError) {
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <ng-lottie [options]="errorOptions" [width]="'400px'" />
-      <p class="error-message mt-2">Oops! An error occurred.</p>
-    </div>
+    <app-error-blog></app-error-blog>
     <div class="mb-5 d-flex justify-content-center align-items-center">
       <button class="btn" (click)="getAllArticles()">
         <i class="bi bi-hand-index-thumb icon"></i> &nbsp; Try again
@@ -16,13 +13,7 @@
       <app-blog-card [blog]="blog" class="h-100"></app-blog-card>
     </div>
     } @empty { 
-      @if (!isLoading) { <div class="d-flex flex-column justify-content-center align-items-center">
-        <ng-lottie [options]="emptyOptions" [width]="'400px'" [height]="'250px'" />
-        <p class="error-message ">Oops! No Blogs Found.</p>
-        <button class="btn" (click)="getAllArticles()">
-          <i class="bi bi-hand-index-thumb icon"></i> &nbsp; Try again
-        </button>
-      </div>}
+      @if (!isLoading&& !isError) { <app-empty-blog (tryAgain)="getAllArticles()"></app-empty-blog>}
      
     }
 

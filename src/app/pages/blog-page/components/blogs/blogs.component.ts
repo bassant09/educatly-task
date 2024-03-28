@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 import { BlogsService } from '../../../../core/services/blogs.service';
 import { AnimationItem } from 'lottie-web';
 import { LottieComponent, AnimationOptions } from 'ngx-lottie';
-import { tap, throwError } from 'rxjs';
+import { pipe, tap, throwError } from 'rxjs';
+import { ErrorBlogComponent } from '../error-blog/error-blog.component';
+import { EmptyBlogComponent } from '../empty-blog/empty-blog.component';
 
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [CommonModule,BlogCardComponent,LottieComponent],
+  imports: [CommonModule,BlogCardComponent,LottieComponent,ErrorBlogComponent,EmptyBlogComponent],
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.scss'
 })
@@ -38,7 +40,6 @@ export class BlogsComponent implements OnInit{
         next: (articles) => {
          this.isLoading=false
           this.blogs.push(...articles)
-          //this.blogs=[]
         },
         error: (error) => {
          this.isLoading=false

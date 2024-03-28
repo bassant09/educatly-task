@@ -7,3 +7,15 @@ body{
 *{
     font-family: 'Inter', sans-serif;
 }
+.btn{
+    background-color: $light-purple-color;
+    color: $secondary-color;
+    border: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.error-message{
+    font-size: 20px;
+    color: $secondary-color;
+    font-weight: 600;
+}

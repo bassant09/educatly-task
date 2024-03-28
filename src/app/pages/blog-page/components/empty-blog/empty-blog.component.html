@@ -1,0 +1,7 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <ng-lottie [options]="emptyOptions" [width]="'300px'" [height]="'250px'" />
+    <p class="error-message ">Oops! No Blogs Found.</p>
+    <button class="btn" (click)="tryAgain.emit()">
+      <i class="bi bi-hand-index-thumb icon"></i> &nbsp; Try again
+    </button>
+  </div>
